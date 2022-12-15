@@ -69,8 +69,10 @@ sqitch config --user engine.pg.client /usr/bin/psql
 
 And let’s also tell it who we are, since this data will be used in all of our projects:
 
+```sh
 sqitch config --user user.name 'Fabio Bressler'
 sqitch config --user user.email 'fabio.bressler@gmail.com'
+```
 
 > Note: `~/.sqitch/sqitch.conf` will hold global configuration settings, and `sqitch.conf` will hold project-specific settings.
 
