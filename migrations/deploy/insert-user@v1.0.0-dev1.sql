@@ -1,7 +1,6 @@
 -- Deploy sample-project:insert-user to pg
 -- requires: users
 -- requires: app-schema
--- requires: pgcrypto
 BEGIN;
 CREATE OR REPLACE FUNCTION app.insert_user (nickname text, PASSWORD TEXT)
   RETURNS VOID
@@ -9,7 +8,7 @@ CREATE OR REPLACE FUNCTION app.insert_user (nickname text, PASSWORD TEXT)
   SECURITY DEFINER
   AS $$
   INSERT INTO app.users
-    VALUES ($1, crypt($2, gen_salt('md5')));
+    VALUES ($1, md5($2));
 $$;
 COMMIT;
 
