@@ -61,6 +61,7 @@ It will create a `sqitch.conf` file and all the necessary files to start working
 Setup `psql` client target:
 
 ```sh
+whereis psql
 sqitch config --user engine.pg.client /opt/homebrew/opt/libpq/bin/psql
 ```
 
