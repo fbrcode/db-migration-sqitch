@@ -77,6 +77,41 @@ sqitch add-schema app -n 'Add schema for all sample application objects.'
 
 It will be added ro the plan and 3 files will be created named as `app-schema.sql` under `deploy`, `revert` and `verify` folders.
 
+Use already defined environment variables for easier calls:
+
+```sh
+source ../database/.env
+```
+
+Set verification on every deploy and rebase:
+
+```sh
+sqitch config --bool deploy.verify true
+sqitch config --bool rebase.verify true
+```
+
+Deploy the change:
+
+```sh
+sqitch deploy
+```
+
+To manage the changes, a separate schema holds the structure:
+
+```txt
+app_sample=# \dt sqitch.*
+            List of relations
+ Schema |     Name     | Type  |  Owner
+--------+--------------+-------+----------
+ sqitch | changes      | table | postgres
+ sqitch | dependencies | table | postgres
+ sqitch | events       | table | postgres
+ sqitch | projects     | table | postgres
+ sqitch | releases     | table | postgres
+ sqitch | tags         | table | postgres
+(6 rows)
+```
+
 ## Sqitch Repository List & Examples
 
 - <https://github.com/nathansutton/database-migrations/tree/main/src/migrations/sqitch>
