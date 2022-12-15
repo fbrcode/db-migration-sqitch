@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  pg13:
+    container_name: postgres13
+    image: postgres:13.9
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=$PGUSER
+      - POSTGRES_PASSWORD=$PGPASSWORD
+      - POSTGRES_DB=$PGDATABASE
+    ports:
+      - "$PGPORT:5432"
+    volumes:
+      - sqitch_pg:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+volumes:
+  sqitch_pg:
