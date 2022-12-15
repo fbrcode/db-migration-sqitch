@@ -69,6 +69,8 @@ sqitch config --user user.email 'fabio.bressler@gmail.com'
 
 > Note: `~/.sqitch/sqitch.conf` will hold global configuration settings, and `sqitch.conf` will hold project-specific settings.
 
+### Sqitch development
+
 Create a new step to deploy, rollback, verify a db change:
 
 ```sh
@@ -96,7 +98,9 @@ Deploy the change:
 sqitch deploy
 ```
 
-To manage the changes, a separate schema holds the structure:
+Database will be updated:
+
+To manage the changes, a separate schema holds the structure.
 
 ```txt
 app_sample=# \dt sqitch.*
@@ -146,12 +150,24 @@ sqitch add change-pwd --requires users --requires app-schema \
 -n 'Creates a function to change a user password.'
 ```
 
+### Sqitch tag versioning
+
 Add a tag for the current state and verify it:
 
 ```sh
 sqitch tag v1.0.0-dev1 -n 'Tag v1.0.0-dev1.'
 sqitch deploy
 sqitch status --show-tags
+```
+
+### Sqitch in-place refactor
+
+Example to use pgcrypto instead of md5 functions.
+
+Add pgcrypto extension:
+
+```sh
+sqitch add pgcrypto --requires app-schema -n 'Add pgcrypto extension.'
 ```
 
 ## Sqitch Repository List & Examples
