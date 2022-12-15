@@ -36,6 +36,7 @@ sqitch --version
 
 ```sh
 apt install sqitch libdbd-pg-perl postgresql-client
+sqitch --version
 ```
 
 Reference: <https://sqitch.org/download/debian/>
