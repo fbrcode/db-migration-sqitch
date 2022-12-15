@@ -51,7 +51,7 @@ Initialize the database following the instructions in the `README.md` file in th
 On `sqitch/migrations` folder, run the init command:
 
 ```sh
-sqitch init sample-project --uri https://github.com/sqitchers/sqitch-intro/ --engine pg
+sqitch init sample-project --uri https://github.com/fbrcode/db-migration-sqitch/ --engine pg
 ```
 
 It will create a `sqitch.conf` file and all the necessary files to start working with Sqitch.
@@ -68,6 +68,14 @@ sqitch config --user user.name 'Fabio Bressler'
 sqitch config --user user.email 'fabio.bressler@gmail.com'
 
 > Note: `~/.sqitch/sqitch.conf` will hold global configuration settings, and `sqitch.conf` will hold project-specific settings.
+
+Create a new step to deploy, rollback, verify a db change:
+
+```sh
+sqitch add-schema app -n 'Add schema for all sample application objects.'
+```
+
+It will be added ro the plan and 3 files will be created named as `app-schema.sql` under `deploy`, `revert` and `verify` folders.
 
 ## Sqitch Repository List & Examples
 
