@@ -179,6 +179,12 @@ sqitch rework change-pwd --requires pgcrypto -n 'Refactor change-pwd to use pgcr
 
 Change the original `deploy/insert-user.sql` and `deploy/change-pwd.sql` files and leave the newly created ones as they are.
 
+Set a new tag:
+
+```sh
+sqitch tag v1.0.0-dev2 -n 'Tag v1.0.0-dev2.'
+```
+
 ## Sqitch Repository List & Examples
 
 - <https://github.com/nathansutton/database-migrations/tree/main/src/migrations/sqitch>
