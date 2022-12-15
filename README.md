@@ -146,6 +146,14 @@ sqitch add change-pwd --requires users --requires app-schema \
 -n 'Creates a function to change a user password.'
 ```
 
+Add a tag for the current state and verify it:
+
+```sh
+sqitch tag v1.0.0-dev1 -n 'Tag v1.0.0-dev1.'
+sqitch deploy
+sqitch status --show-tags
+```
+
 ## Sqitch Repository List & Examples
 
 - <https://github.com/nathansutton/database-migrations/tree/main/src/migrations/sqitch>

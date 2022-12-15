@@ -6,3 +6,4 @@ app-schema 2022-12-15T01:17:03Z Fabio Bressler <fabio.bressler@gmail.com> # Add 
 users [app-schema] 2022-12-15T11:51:30Z Fabio Bressler <fabio.bressler@gmail.com> # Creates table to track our users.
 insert-user [users app-schema] 2022-12-15T14:42:22Z Fabio Bressler <fabio.bressler@gmail.com> # Creates a function to insert a user.
 change-pwd [users app-schema] 2022-12-15T14:45:13Z Fabio Bressler <fabio.bressler@gmail.com> # Creates a function to change a user password.
+@v1.0.0-dev1 2022-12-15T15:50:02Z Fabio Bressler <fabio.bressler@gmail.com> # Tag v1.0.0-dev1.
