@@ -72,7 +72,7 @@ sqitch config --user user.email 'fabio.bressler@gmail.com'
 Create a new step to deploy, rollback, verify a db change:
 
 ```sh
-sqitch add-schema app -n 'Add schema for all sample application objects.'
+sqitch add-schema app-schema -n 'Add schema for all sample application objects.'
 ```
 
 It will be added ro the plan and 3 files will be created named as `app-schema.sql` under `deploy`, `revert` and `verify` folders.
@@ -110,6 +110,24 @@ app_sample=# \dt sqitch.*
  sqitch | releases     | table | postgres
  sqitch | tags         | table | postgres
 (6 rows)
+```
+
+Check status:
+
+```sh
+sqitch status
+```
+
+Check logs:
+
+```sh
+sqitch log --reverse --no-color --oneline | cat
+```
+
+Add another change:
+
+```sh
+sqitch add users --requires app-schema -n 'Creates table to track our users.'
 ```
 
 ## Sqitch Repository List & Examples

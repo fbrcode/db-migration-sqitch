@@ -3,3 +3,4 @@
 %uri=https://github.com/fbrcode/db-migration-sqitch/
 
 app-schema 2022-12-15T01:17:03Z Fabio Bressler <fabio.bressler@gmail.com> # Add schema for all application sample objects.
+users [app-schema] 2022-12-15T11:51:30Z Fabio Bressler <fabio.bressler@gmail.com> # Creates table to track our users.
