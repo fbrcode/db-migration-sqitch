@@ -63,6 +63,8 @@ Setup `psql` client target:
 ```sh
 whereis psql
 sqitch config --user engine.pg.client /opt/homebrew/opt/libpq/bin/psql
+# or
+sqitch config --user engine.pg.client /usr/bin/psql
 ```
 
 And let’s also tell it who we are, since this data will be used in all of our projects:
