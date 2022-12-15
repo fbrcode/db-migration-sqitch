@@ -130,6 +130,22 @@ Add another change:
 sqitch add users --requires app-schema -n 'Creates table to track our users.'
 ```
 
+Revert only the last change (without confirmation):
+
+```sh
+sqitch revert --to @HEAD^ -y
+```
+
+Run two migrations at once:
+
+```sh
+sqitch add insert-user --requires users --requires app-schema \
+-n 'Creates a function to insert a user.'
+
+sqitch add change-pwd --requires users --requires app-schema \
+-n 'Creates a function to change a user password.'
+```
+
 ## Sqitch Repository List & Examples
 
 - <https://github.com/nathansutton/database-migrations/tree/main/src/migrations/sqitch>

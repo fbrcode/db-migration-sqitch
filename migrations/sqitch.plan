@@ -4,3 +4,5 @@
 
 app-schema 2022-12-15T01:17:03Z Fabio Bressler <fabio.bressler@gmail.com> # Add schema for all application sample objects.
 users [app-schema] 2022-12-15T11:51:30Z Fabio Bressler <fabio.bressler@gmail.com> # Creates table to track our users.
+insert-user [users app-schema] 2022-12-15T14:42:22Z Fabio Bressler <fabio.bressler@gmail.com> # Creates a function to insert a user.
+change-pwd [users app-schema] 2022-12-15T14:45:13Z Fabio Bressler <fabio.bressler@gmail.com> # Creates a function to change a user password.
