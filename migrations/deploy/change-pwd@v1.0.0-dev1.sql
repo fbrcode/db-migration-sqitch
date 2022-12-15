@@ -11,10 +11,10 @@ BEGIN
   UPDATE
     app.users
   SET
-    PASSWORD = crypt($3, gen_salt('md5'))
+    PASSWORD = md5($3)
   WHERE
     nickname = $1
-    AND crypt($2, PASSWORD);
+    AND PASSWORD = md5($2);
   RETURN FOUND;
 END;
 $$;

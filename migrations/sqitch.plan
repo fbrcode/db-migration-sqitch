@@ -9,3 +9,5 @@ change-pwd [users app-schema] 2022-12-15T14:45:13Z Fabio Bressler <fabio.bressle
 @v1.0.0-dev1 2022-12-15T15:50:02Z Fabio Bressler <fabio.bressler@gmail.com> # Tag v1.0.0-dev1.
 
 pgcrypto [app-schema] 2022-12-15T16:37:13Z Fabio Bressler <fabio.bressler@gmail.com> # Add pgcrypto extension.
+insert-user [insert-user@v1.0.0-dev1 pgcrypto] 2022-12-15T17:37:38Z Fabio Bressler <fabio.bressler@gmail.com> # Refactor insert-user function.
+change-pwd [change-pwd@v1.0.0-dev1 pgcrypto] 2022-12-15T17:39:20Z Fabio Bressler <fabio.bressler@gmail.com> # Refactor change-pwd to use pgcrypto.

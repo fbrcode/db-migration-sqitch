@@ -170,6 +170,15 @@ Add pgcrypto extension:
 sqitch add pgcrypto --requires app-schema -n 'Add pgcrypto extension.'
 ```
 
+Refactor the `insert-user` and `change-pwd` functions accordingly:
+
+```sh
+sqitch rework insert-user --requires pgcrypto -n 'Refactor insert-user function.'
+sqitch rework change-pwd --requires pgcrypto -n 'Refactor change-pwd to use pgcrypto.'
+```
+
+Change the original `deploy/insert-user.sql` and `deploy/change-pwd.sql` files and leave the newly created ones as they are.
+
 ## Sqitch Repository List & Examples
 
 - <https://github.com/nathansutton/database-migrations/tree/main/src/migrations/sqitch>
