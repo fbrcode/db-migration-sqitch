@@ -48,9 +48,10 @@ Initialize the database following the instructions in the `README.md` file in th
 
 ### Sqitch startup
 
-On `sqitch/migrations` folder, run the init command:
+On `migrations` folder, run the init command:
 
 ```sh
+cd migrations
 sqitch init sample-project --uri https://github.com/fbrcode/db-migration-sqitch/ --engine pg
 ```
 
