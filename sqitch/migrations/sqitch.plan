@@ -1,4 +1,5 @@
 %syntax-version=1.0.0
 %project=sample-project
-%uri=https://github.com/sqitchers/sqitch-intro/
+%uri=https://github.com/fbrcode/db-migration-sqitch/
 
+app-schema 2022-12-15T01:17:03Z Fabio Bressler <fabio.bressler@gmail.com> # Add schema for all application sample objects.
